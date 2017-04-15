@@ -25,14 +25,15 @@ function respond() {
   }
   else if(request.text && botRegexSlut.test(request.text)) {
     this.res.writeHead(200);
-    var rand = Math.floor(Math.random() * 3) + 1;
+   /* var rand = Math.floor(Math.random() * 3) + 1;
     if(rand == 1){
       postMessage("Is on rides");
     }else if(rand == 2){
       postMessage("...did we leave him in the 541 basement?");
     }else {
      postMessage("Definitely should have dropped him");
-    }
+    }*/
+    postMessage("Steve has aids");
     
     this.res.end();
   } 
