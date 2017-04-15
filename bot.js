@@ -9,7 +9,7 @@ function respond() {
       botRegexAd=/^\/advance/;botRegexGTA = /^\/gta/; botRegexSC = /^\/SDL/i; botODB = /(.*\s+)(.*odb)(\s+.*)/i; botDuck = /^\/duck/;
       botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; botRegexSb = /^\/sub/; botRegexSh = /^\/shrug/; botRegexWk = /^\/users/; botRegexCC = /^\/cc/;
       botRegexSiege = /^\/siege/; botRegexOW = /^\/ratings/; 
-      botRegexSlut = /^\steve?/; botRegexStop = /^\eric/;
+      botRegexSlut = /^\steve/; botRegexStop = /^\eric/;
       botRegexProp = /^\/prop/;botRegexKys = /^\/kys/; botRegexSlam = /^\/slam/; botRegexBrye = /^\/brye/;
       botRegexGian = /^\/gian/; botRegexScrotes = /^\/scrotes/; botRegexShaki = /^\/shaki/;
       botRegexDaf = /^\/dafuq/; botRegexMA32 = /^\/pending/; botRegexTrade = /^\/trade/; 
@@ -32,10 +32,9 @@ function respond() {
       postMessage("...did we forget to feed him?");
     }else if(randInt1 == 3){
       postMessage("Who gave him a bid?");
-             }
-  else if(randInt1 == 4){
+    } else if(randInt1 == 4){
           postMessage("Hes downstairs doing kitchen cleans");
-          }else {
+    }else {
     postMessage("I just called him, hes taking johnny to get mcdonalds");
     }
     
