@@ -9,7 +9,7 @@ function respond() {
       botRegexAd=/^\/advance/;botRegexGTA = /^\/gta/; botRegexSC = /^\/SDL/i; botODB = /(.*\s+)(.*odb)(\s+.*)/i; botDuck = /^\/duck/;
       botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; botRegexSb = /^\/sub/; botRegexSh = /^\/shrug/; botRegexWk = /^\/users/; botRegexCC = /^\/cc/;
       botRegexSiege = /^\/siege/; botRegexOW = /^\/ratings/; 
-      botRegexSlut = /^\pete/; botRegexStop = /^\eric/;
+      botRegexSlut = /^\steve?/; botRegexStop = /^\eric/;
       botRegexProp = /^\/prop/;botRegexKys = /^\/kys/; botRegexSlam = /^\/slam/; botRegexBrye = /^\/brye/;
       botRegexGian = /^\/gian/; botRegexScrotes = /^\/scrotes/; botRegexShaki = /^\/shaki/;
       botRegexDaf = /^\/dafuq/; botRegexMA32 = /^\/pending/; botRegexTrade = /^\/trade/; 
@@ -25,7 +25,20 @@ function respond() {
   }
   else if(request.text && botRegexSlut.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("is pete");
+    var randInt1 = Math.floor(Math.random() * 5) + 1;
+    if(randInt == 1){
+      postMessage("He's still in the 541 basement");
+    }else if(randInt == 2){
+      postMessage("...did we forget to feed him?");
+    }else if(randInt == 3){
+      postMessage("Who gave him a bid?");
+             }
+  else if(randInt == 4){
+          postMessage("Hes downstairs doing kitchen cleans");
+          }else {
+    postMessage("I just called him, hes taking johnny to get mcdonalds");
+    }
+    
     this.res.end();
   } 
   else if(request.text && botRegexStop.test(request.text)) {
