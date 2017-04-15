@@ -30,7 +30,16 @@ function respond() {
   } 
   else if(request.text && botRegexStop.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("is a bitch");
+    var randInt = Math.floor(Math.random() * 3) + 1;
+    if(randInt == 1){
+      postMessage("Rumor has it the kid has a small penis");
+    }else if(randInt == 2){
+      postMessage("kid is such a bitch");
+    }else {
+     postMessage("I heard that kid is whipped");
+    }
+    
+   // postMessage("is a bitch");
     this.res.end();
   } 
   else if(request.text && botRegexProp.test(request.text)) {
