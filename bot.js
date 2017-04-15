@@ -1,5 +1,7 @@
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
+var k = require('./karma.json');
+var fs = require('fs');
 
 var botID = process.env.BOT_ID;
 
@@ -39,6 +41,15 @@ function respond() {
   } 
   else if(request.text && botRegexStop.test(request.text)) {
     this.res.writeHead(200);
+    var c = k.karma + 1;
+    postMessage("Eric's Karma: " + c);
+    var obj = {
+    'karma': c
+};
+fs.writeFile('./karma.json', JSON.stringify(obj), function (err) {
+        if (err) return console.log(err);
+            });
+
     var randInt = Math.floor(Math.random() * 3) + 1;
     if(randInt == 1){
       postMessage("Rumor has it the kid has a small penis");
