@@ -25,17 +25,13 @@ function respond() {
   }
   else if(request.text && botRegexSlut.test(request.text)) {
     this.res.writeHead(200);
-    var randInt1 = Math.floor(Math.random() * 5) + 1;
-    if(randInt1 == 1){
-      postMessage("He's still in the 541 basement");
-    }else if(randInt1 == 2){
-      postMessage("...did we forget to feed him?");
-    }else if(randInt1 == 3){
-      postMessage("Who gave him a bid?");
-    } else if(randInt1 == 4){
-          postMessage("Hes downstairs doing kitchen cleans");
+    var randInt = Math.floor(Math.random() * 3) + 1;
+    if(randInt == 1){
+      postMessage("Is on rides");
+    }else if(randInt == 2){
+      postMessage("...did we leave him in the 541 basement?");
     }else {
-    postMessage("I just called him, hes taking johnny to get mcdonalds");
+     postMessage("Definitely should have dropped him");
     }
     
     this.res.end();
