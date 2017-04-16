@@ -1,6 +1,8 @@
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
 var k = require('./karma.json');
+//json error?
+var fs = require('fs');
 var botID = process.env.BOT_ID;
 
 function respond() {
@@ -25,6 +27,14 @@ function respond() {
   }
   else if(request.text && botRegexSlut.test(request.text)) {
     this.res.writeHead(200);
+    //JSON stuff that might cause problems 
+    var obj = {
+    'karma': 5
+    };
+    fs.writeFile('./karma.json', JSON.stringify(obj), function (err) {
+	    if (err) return console.log(err);
+	    });
+    
     postMessage("JSON" + k.karma);
     this.res.end();
   } 
