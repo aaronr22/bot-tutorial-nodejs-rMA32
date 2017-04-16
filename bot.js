@@ -25,7 +25,7 @@ function respond() {
   }
   else if(request.text && botRegexSlut.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("JSON");
+    postMessage("JSON" + k.karma);
     this.res.end();
   } 
   else if(request.text && botRegexStop.test(request.text)) {
