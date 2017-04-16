@@ -1,8 +1,6 @@
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
-var client = require('redis').createClient(process.env.REDIS_URL);
-var k = require('./karma.json');
-var fs = require('fs');
+
 
 var botID = process.env.BOT_ID;
 
@@ -95,7 +93,7 @@ function respond() {
   } 
   else if(request.text && botRegexAd.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("JSON test" + k.karma);
+    postMessage("JSON test");
     this.res.end();
   }
   else if(request.text && botRegexRules.test(request.text)) {
