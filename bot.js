@@ -1,7 +1,5 @@
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
-var k = require('./karma.json');
-var fs = require('fs');
 
 var botID = process.env.BOT_ID;
 
@@ -11,7 +9,7 @@ function respond() {
       botRegexAd=/^\/advance/;botRegexGTA = /^\/gta/; botRegexSC = /^\/SDL/i; botODB = /(.*\s+)(.*odb)(\s+.*)/i; botDuck = /^\/duck/;
       botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; botRegexSb = /^\/sub/; botRegexSh = /^\/shrug/; botRegexWk = /^\/users/; botRegexCC = /^\/cc/;
       botRegexSiege = /^\/siege/; botRegexOW = /^\/ratings/; 
-      botRegexSlut = /^\cornish/; botRegexStop = /^\eric/;
+      botRegexSlut = /^\/slut/; botRegexStop = /^\/stop/;
       botRegexProp = /^\/prop/;botRegexKys = /^\/kys/; botRegexSlam = /^\/slam/; botRegexBrye = /^\/brye/;
       botRegexGian = /^\/gian/; botRegexScrotes = /^\/scrotes/; botRegexShaki = /^\/shaki/;
       botRegexDaf = /^\/dafuq/; botRegexMA32 = /^\/pending/; botRegexTrade = /^\/trade/; 
@@ -27,39 +25,12 @@ function respond() {
   }
   else if(request.text && botRegexSlut.test(request.text)) {
     this.res.writeHead(200);
-   /* var rand = Math.floor(Math.random() * 3) + 1;
-    if(rand == 1){
-      postMessage("Is on rides");
-    }else if(rand == 2){
-      postMessage("...did we leave him in the 541 basement?");
-    }else {
-     postMessage("Definitely should have dropped him");
-    }*/
-    postMessage("Steve has aids");
-    
+    postMessage("https://i.groupme.com/640x364.jpeg.f8a0e216bf7e42ed9a86b3ae23cc2ff1.large");
     this.res.end();
   } 
   else if(request.text && botRegexStop.test(request.text)) {
     this.res.writeHead(200);
-    var c = k.karma + 1;
-    postMessage("Eric's Karma: " + c);
-    var obj = {
-    'karma': c
-};
-fs.writeFile('./karma.json', JSON.stringify(obj), function (err) {
-        if (err) return console.log(err);
-            });
-
-    var randInt = Math.floor(Math.random() * 3) + 1;
-    if(randInt == 1){
-      postMessage("Rumor has it the kid has a small penis");
-    }else if(randInt == 2){
-      postMessage("kid is such a bitch");
-    }else {
-     postMessage("I heard that kid is whipped");
-    }
-    
-   // postMessage("is a bitch");
+    postMessage("Stop appropriating black culture");
     this.res.end();
   } 
   else if(request.text && botRegexProp.test(request.text)) {
