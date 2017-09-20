@@ -1,8 +1,6 @@
 var HTTPS = require('https');
 var cool = require('cool-ascii-faces');
-var k = require('./karma.json');
-//json error?
-var fs = require('fs');
+
 var botID = process.env.BOT_ID;
 
 function respond() {
@@ -11,7 +9,7 @@ function respond() {
       botRegexAd=/^\/advance/;botRegexGTA = /^\/gta/; botRegexSC = /^\/SDL/i; botODB = /(.*\s+)(.*odb)(\s+.*)/i; botDuck = /^\/duck/;
       botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; botRegexSb = /^\/sub/; botRegexSh = /^\/shrug/; botRegexWk = /^\/users/; botRegexCC = /^\/cc/;
       botRegexSiege = /^\/siege/; botRegexOW = /^\/ratings/; 
-      botRegexSlut = /^\/json/; botRegexStop = /^\/stop/;
+      botRegexSlut = /^\/slut/; botRegexMason = /^\/mason/;
       botRegexProp = /^\/prop/;botRegexKys = /^\/kys/; botRegexSlam = /^\/slam/; botRegexBrye = /^\/brye/;
       botRegexGian = /^\/gian/; botRegexScrotes = /^\/scrotes/; botRegexShaki = /^\/shaki/;
       botRegexDaf = /^\/dafuq/; botRegexMA32 = /^\/pending/; botRegexTrade = /^\/trade/; 
@@ -27,20 +25,7 @@ function respond() {
   }
   else if(request.text && botRegexSlut.test(request.text)) {
     this.res.writeHead(200);
-    //JSON stuff that might cause problems 
-    var obj = {
-    'karma': 5
-    };
-    fs.writeFile('./karma.json', JSON.stringify(obj), function (err) {
-	    if (err) return console.log(err);
-	    });
-    
-    postMessage("JSON" + k.karma);
-    this.res.end();
-  } 
-  else if(request.text && botRegexStop.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("Stop appropriating black culture");
+    postMessage("https://i.groupme.com/640x364.jpeg.f8a0e216bf7e42ed9a86b3ae23cc2ff1.large");
     this.res.end();
   } 
   else if(request.text && botRegexProp.test(request.text)) {
@@ -86,7 +71,7 @@ function respond() {
   else if(request.text && botRegexDL.test(request.text)) {
     this.res.writeHead(200);
     //postMessage("http://www.daddyleagues.com/maddenrating?name=&position=all&team="+request.text.substring(5,8));
-    postMessage("http://daddyleagues.com/mcf/team/"+request.text.substring(5,8)+"/depthchart");
+    postMessage("http://daddyleagues.com/nml18/team/"+request.text.substring(5,8)+"/depthchart");
     this.res.end();
   } 
   
@@ -118,14 +103,14 @@ function respond() {
   else if(request.text && botRegexSC.test(request.text)) {
     this.res.writeHead(200);
     
-    postMessage("http://daddyleagues.com/mcf/team/"+request.text.substring(5,8)+"/schedule");
+    postMessage("http://daddyleagues.com/nml18/team/"+request.text.substring(5,8)+"/schedule");
     this.res.end();
   }
   else if(request.text && botRegexP.test(request.text)) {
     this.res.writeHead(200);
     var req = request.text.substring(5,request.text.length);
     var rep = req.replace(/ /,"+");
-    postMessage("http://daddyleagues.com/mcf/players?name="+rep+"&position=all&team=all");
+    postMessage("http://daddyleagues.com/nml18/players?name="+rep+"&position=all&team=all");
     
     this.res.end();
   }  
@@ -137,7 +122,7 @@ function respond() {
   } 
   else if(request.text && botRegexSb.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://www.reddit.com/r/maddenall32");
+    postMessage("https://www.reddit.com/r/TheNiceMaddenLeague/");
     this.res.end();
   } 
   else if(request.text && botRegexSh.test(request.text)) {
@@ -150,9 +135,9 @@ function respond() {
     postMessage("https://docs.google.com/spreadsheets/d/1zRLaUZ12vUOORFdNQbPCzJW5T0zFBrkth_osH9b7d34/edit?usp=drivesdk");
     this.res.end();
   } 
-  else if(request.text && botODB.test(request.text)) {
+  else if(request.text && botRegexMason.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("OBJ*");
+    postMessage("https://i.groupme.com/845x1170.jpeg.002f5f8a4b6c4afbb858f474f99506ad");
     this.res.end();
   } 
   else if(request.text && botDuck.test(request.text)) {
